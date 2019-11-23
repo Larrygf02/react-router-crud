@@ -17,6 +17,18 @@
       "precioPlatillo": "20",
       "categoria": "cortes",
       "id": 3
+    },
+    {
+      "nombrePlatillo": "Gaseosa",
+      "precioPlatillo": "3",
+      "categoria": "bebida",
+      "id": 4
+    },
+    {
+      "nombrePlatillo": "Pie",
+      "precioPlatillo": "4",
+      "categoria": "postre",
+      "id": 5
     }
   ]
 }

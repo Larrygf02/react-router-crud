@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Error from './Error'
 import axios from 'axios'
+import Swal from 'sweetalert2'// para las alertas https://sweetalert2.github.io/
+import { withRouter } from 'react-router-dom';
 
-function AgregarProducto() {
+function AgregarProducto({ history }) {
     // state 
     const [ nombrePlatillo, guardarNombre ] = useState('')
     const [ precioPlatillo, guardarPrecio ] = useState('')
@@ -12,11 +14,11 @@ function AgregarProducto() {
     const leerValorRadio = e => {
         guardarCategoria(e.target.value)
     }
-
+    
     const agregarProducto = async e => {
         e.preventDefault();
 
-        if (nombrePlatillo == '' || precioPlatillo == '' || categoria == '') {
+        if (nombrePlatillo === '' || precioPlatillo === '' || categoria === '') {
             guardarError(true)
             return;
         }
@@ -29,9 +31,24 @@ function AgregarProducto() {
                 categoria
             })
             console.log(resultado);
+            if (resultado.status === 201) {
+                // para las alertas https://sweetalert2.github.io/
+                Swal.fire(
+                    'Producto Creado!',
+                    'El producto se creo correctamente!',
+                    'success'
+                )
+            }
         } catch (error) {
             console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Hubo un error, vuelve a intentarlo!'
+            })
         }
+        // Redirigir al usuario a productos
+        history.push('/productos')
 
     }
     return (
@@ -124,5 +141,5 @@ function AgregarProducto() {
         </div>
     )
 }
-
-export default AgregarProducto;
+//withRouter HOC (hight order component)
+export default withRouter(AgregarProducto);
