@@ -1,0 +1,16 @@
+{
+    "restaurant": [
+        {
+            "precioPlatillo": "200",
+            "nombrePlatillo": "Cheescake",
+            "categoria": "Postres",
+            "id": 1
+        },
+        {
+            "precioPlatillo": "300",
+            "nombrePlatillo": "Pollito",
+            "categoria": "Saldados",
+            "id": 2
+        }
+    ]
+}
