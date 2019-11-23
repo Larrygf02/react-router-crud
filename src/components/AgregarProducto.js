@@ -1,21 +1,36 @@
 import React, { useState } from 'react';
+import Error from './Error'
 
 function AgregarProducto() {
     // state 
     const [ nombrePlatillo, guardarNombre ] = useState('')
     const [ precioPlatillo, guardarPrecio ] = useState('')
     const [ categoria, guardarCategoria ] = useState('')
+    const [ error, guardarError ] = useState(false)
 
     const leerValorRadio = e => {
         guardarCategoria(e.target.value)
     }
 
+    const agregarProducto = e => {
+        e.preventDefault();
+
+        if (nombrePlatillo == '' || precioPlatillo == '' || categoria == '') {
+            guardarError(true)
+            return;
+        }
+        guardarError(false)
+        // Crear el nuevo producto
+
+    }
     return (
         <div className="col-md-8 mx-auto ">
             <h1 className="text-center">Agregar Nuevo Producto</h1>
-
+            {/* Si hay error muestra el componente */}
+            {(error) ? <Error mensaje="Todos los campos son obligatorios"/> : null}
             <form
                 className="mt-5"
+                onSubmit={agregarProducto}
             >
                 <div className="form-group">
                     <label>Nombre Platillo</label>
