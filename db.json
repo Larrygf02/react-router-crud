@@ -1,16 +1,22 @@
 {
-    "restaurant": [
-        {
-            "precioPlatillo": "200",
-            "nombrePlatillo": "Cheescake",
-            "categoria": "Postres",
-            "id": 1
-        },
-        {
-            "precioPlatillo": "300",
-            "nombrePlatillo": "Pollito",
-            "categoria": "Saldados",
-            "id": 2
-        }
-    ]
+  "restaurant": [
+    {
+      "precioPlatillo": "200",
+      "nombrePlatillo": "Cheescake",
+      "categoria": "Postres",
+      "id": 1
+    },
+    {
+      "precioPlatillo": "300",
+      "nombrePlatillo": "Pollito",
+      "categoria": "Saldados",
+      "id": 2
+    },
+    {
+      "nombrePlatillo": "Ensala de Frutas",
+      "precioPlatillo": "20",
+      "categoria": "cortes",
+      "id": 3
+    }
+  ]
 }
