@@ -29,6 +29,12 @@
       "precioPlatillo": "4",
       "categoria": "postre",
       "id": 5
+    },
+    {
+      "nombrePlatillo": "Ensalada de Pollo",
+      "precioPlatillo": "100",
+      "categoria": "ensalada",
+      "id": 6
     }
   ]
 }

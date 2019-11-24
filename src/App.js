@@ -9,14 +9,20 @@ import Header from './components/Header'
 
 function App() {
   const [ productos, guardarProductos ] = useState([])
+  const [ recargarProductos, guardarRecargarProductos ] = useState(true)
   useEffect(() => {
-    const consultarApi = async () => {
-      const resultado = await axios.get('http://localhost:4000/restaurant')
-      console.log(resultado.data);
-      guardarProductos(resultado.data)
+    if (recargarProductos) {
+      const consultarApi = async () => {
+        const resultado = await axios.get('http://localhost:4000/restaurant')
+        console.log(resultado.data);
+        guardarProductos(resultado.data)
+      }
+      consultarApi()
+
+      //cambiar a false la recargar de los productos
+      guardarRecargarProductos(false);
     }
-    consultarApi()
-  }, [])
+  }, [recargarProductos])
 
   console.log(productos);
   return (
@@ -28,9 +34,20 @@ function App() {
               <Productos productos={productos}/>
             )
           }></Route>
-          <Route exact path="/nuevo-producto" component={AgregarProducto}></Route>
+          <Route exact path="/nuevo-producto" render={() => (
+            <AgregarProducto guardarRecargarProductos={guardarRecargarProductos}/>
+          )}></Route>
           <Route exact path="/productos/:id" component={Producto}></Route>
-          <Route exact path="/producto/editar/:id" component={EditarProducto}></Route>
+          <Route exact path="/producto/editar/:id" render={props =>{
+            const idProducto = parseInt(props.match.params.id);
+            // filtrar los productos por el state
+            const producto = productos.filter(prod => prod.id === idProducto)
+
+            console.log(props.match.params.id); // recoge los parametros de la url
+            return (
+              <EditarProducto producto={producto[0]}/>
+            )
+          }}></Route>
         </Switch>
       </main>
       <p className="mt-4 p2 text-center">Todos los derechos reservados</p>
