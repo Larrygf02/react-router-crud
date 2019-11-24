@@ -16,8 +16,8 @@ function EditarProducto({history, producto, guardarRecargarProductos}) {
         e.preventDefault();
 
         //validacion
-        const nuevoValorPlatillo = precioPlatilloRef.current.value
-        const nuevoPrecioPlatillo = nombrePlatilloRef.current.value
+        const nuevoPrecioPlatillo = precioPlatilloRef.current.value
+        const nuevoValorPlatillo = nombrePlatilloRef.current.value
 
         //Revisar si cambio la categoria de lo contrario asignar el mismo valor
         let categoriaPlatillo = (categoria === '') ? producto.categoria : categoria

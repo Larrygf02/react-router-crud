@@ -1,18 +1,6 @@
 {
   "restaurant": [
     {
-      "precioPlatillo": "Cheescake",
-      "nombrePlatillo": "500",
-      "categoria": "postre",
-      "id": 1
-    },
-    {
-      "precioPlatillo": "400",
-      "nombrePlatillo": "Pollito a la brasita",
-      "categoria": "cortes",
-      "id": 2
-    },
-    {
       "nombrePlatillo": "Ensala de Frutas",
       "precioPlatillo": "20",
       "categoria": "cortes",
