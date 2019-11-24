@@ -1,15 +1,15 @@
 {
   "restaurant": [
     {
-      "precioPlatillo": "200",
-      "nombrePlatillo": "Cheescake",
-      "categoria": "Postres",
+      "precioPlatillo": "Cheescake",
+      "nombrePlatillo": "500",
+      "categoria": "postre",
       "id": 1
     },
     {
-      "precioPlatillo": "300",
-      "nombrePlatillo": "Pollito",
-      "categoria": "Saldados",
+      "precioPlatillo": "400",
+      "nombrePlatillo": "Pollito a la brasita",
+      "categoria": "cortes",
       "id": 2
     },
     {
@@ -25,8 +25,8 @@
       "id": 4
     },
     {
+      "precioPlatillo": "9",
       "nombrePlatillo": "Pie",
-      "precioPlatillo": "4",
       "categoria": "postre",
       "id": 5
     },

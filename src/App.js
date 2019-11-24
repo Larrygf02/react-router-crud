@@ -45,7 +45,9 @@ function App() {
 
             console.log(props.match.params.id); // recoge los parametros de la url
             return (
-              <EditarProducto producto={producto[0]}/>
+              <EditarProducto 
+              producto={producto[0]}
+              guardarRecargarProductos={guardarRecargarProductos}/>
             )
           }}></Route>
         </Switch>
